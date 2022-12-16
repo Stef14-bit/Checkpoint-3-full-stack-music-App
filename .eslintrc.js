@@ -6,9 +6,8 @@ module.exports = {
     jest: true,
   },
   extends: [
-    'eslint:recommended',
-    'plugin:prettier/recommended', // Make this the last element so prettier config overrides other formatting rules
-  ],
+    'eslint:recommended'
+     ],
   rules: {
     'prettier/prettier': ['error', {}, { usePrettierrc: true }], // Use our .prettierrc file as source
     'no-console': 1,
