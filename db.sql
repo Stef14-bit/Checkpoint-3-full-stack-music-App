@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`track` (
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
   CONSTRAINT `id_album`
-    FOREIGN KEY (`id`)
+    FOREIGN KEY (`id_album`)
     REFERENCES `mydb`.`album` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
