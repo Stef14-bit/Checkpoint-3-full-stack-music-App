@@ -5,6 +5,20 @@ const connection = require('./db');
 const app = express();
 app.use(express.json());
 
+
+app.put('/api/tracks/:id', async(req,res) => {
+  const {title,youtube_url, id_album} = req.body;
+  const {id} = req.params;
+  connection.query(
+    'UPDATE track SET title = ? WHERE id = ?',
+    [title,id],
+    (err,results) => {
+      if (err) return console.log(err);
+      res.status(204).send()
+    }
+  )
+})
+
 app.post('/api/tracks', async (req, res) => {
   const { title, youtube_url, id_album } = req.body;
   connection.query(
