@@ -5,6 +5,31 @@ const connection = require('./db');
 const app = express();
 app.use(express.json());
 
+
+app.get('/api/albums/:id', async (req,res) => {
+  const {id} = req.params
+  connection.query(
+    'SELECT * FROM album WHERE id = ?',
+    [id],
+    (err,results) => {
+      if (err) return console.log(err)
+      res.status(200).json(...results)
+    }
+  )
+})
+
+
+
+app.get('/api/albums', async (req,res) => {
+  connection.query(
+    'SELECT * FROM album',
+    (err, results) => {
+      if (err) return console.log(err)
+      res.status(200).json(results)
+    }
+  )
+})
+
 app.delete('/api/tracks/:id', async(req,res) => {
   const {id} = req.params;
   connection.query(
