@@ -18,7 +18,17 @@ app.get('/api/albums/:id', async (req,res) => {
   )
 })
 
-
+app.get('/api/albums/:id/tracks', async(req,res) => {
+  const {id} = req.params;
+  connection.query(
+    'SELECT * FROM track WHERE id = ?',
+    [id],
+    (err,results) => {
+      if (err) return console.log(err)
+      res.status(200).json(results)
+    }
+  )
+})
 
 app.get('/api/albums', async (req,res) => {
   connection.query(
