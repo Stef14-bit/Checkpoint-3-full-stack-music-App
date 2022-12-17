@@ -6,6 +6,24 @@ const app = express();
 app.use(express.json());
 
 
+app.post('/api/albums', async(req,res) => {
+  const { title, genre, picture, artist } = req.body;
+  connection.query(
+    'INSERT INTO album (title,genre,picture,artist) VALUES (?,?,?,?)',
+    [title, genre, picture, artist],
+    (err, results) => {
+      if (err) return console.log(err);
+      return connection.query(
+        'SELECT * FROM album WHERE id = ' + results.insertId,
+        (err, result) => {
+          if (err) return console.log(err);
+          res.status(201).json(...result);
+        }
+      );
+    }
+  );
+})
+
 app.get('/api/albums/:id', async (req,res) => {
   const {id} = req.params
   connection.query(
