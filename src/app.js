@@ -5,6 +5,30 @@ const connection = require('./db');
 const app = express();
 app.use(express.json());
 
+app.delete('/api/albums/:id', async(req,res) => {
+  const {id} = req.params;
+  connection.query(
+    'DELETE FROM album WHERE id = ?',
+    [id],
+    (err) => {
+      if (err) console.log(err)
+      res.status(204).send()
+    }
+  )
+})
+
+app.put('/api/albums/:id', async (req, res) => {
+  const { title} = req.body;
+  const { id } = req.params;
+  connection.query(
+    'UPDATE album SET title = ? WHERE id = ?',
+    [title, id],
+    (err) => {
+      if (err) return console.log(err);
+      res.status(204).send();
+    }
+  );
+});
 
 app.post('/api/albums', async(req,res) => {
   const { title, genre, picture, artist } = req.body;
@@ -31,7 +55,10 @@ app.get('/api/albums/:id', async (req,res) => {
     [id],
     (err,results) => {
       if (err) return console.log(err)
-      res.status(200).json(...results)
+      if (results.length>0) {
+        res.status(200).json(...results)
+      }
+      res.status(404).send()
     }
   )
 })
