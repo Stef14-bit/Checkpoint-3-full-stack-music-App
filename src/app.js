@@ -5,19 +5,30 @@ const connection = require('./db');
 const app = express();
 app.use(express.json());
 
-
-app.put('/api/tracks/:id', async(req,res) => {
-  const {title,youtube_url, id_album} = req.body;
+app.delete('/api/tracks/:id', async(req,res) => {
   const {id} = req.params;
   connection.query(
-    'UPDATE track SET title = ? WHERE id = ?',
-    [title,id],
-    (err,results) => {
-      if (err) return console.log(err);
+    'DELETE FROM track WHERE id = ?',
+    [id],
+    (err) => {
+      if (err) console.log(err)
       res.status(204).send()
     }
   )
 })
+
+app.put('/api/tracks/:id', async (req, res) => {
+  const { title} = req.body;
+  const { id } = req.params;
+  connection.query(
+    'UPDATE track SET title = ? WHERE id = ?',
+    [title, id],
+    (err) => {
+      if (err) return console.log(err);
+      res.status(204).send();
+    }
+  );
+});
 
 app.post('/api/tracks', async (req, res) => {
   const { title, youtube_url, id_album } = req.body;
@@ -41,9 +52,13 @@ app.get('/api/tracks/:id', async (req, res) => {
   const { id } = req.params;
   connection.query('SELECT * FROM track WHERE id = ?', [id], (err, results) => {
     if (err) return console.log(err);
-    return res.json(...results);
+    if (results.length>0) {
+      return res.json(...results);
+    }
+    return res.status(404).send()
   });
 });
+
 app.get('/api/tracks', async (req, res) => {
   connection.query('SELECT * FROM track', (err, results) => {
     if (err) return console.log(err);
