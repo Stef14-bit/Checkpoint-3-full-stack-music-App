@@ -14,6 +14,10 @@ install packages
 create migrate file
 add script npm run migrate
 
+# STEP 2 :
+
+adding routes
+
 ## Disclaimer
 
 The checkpoint is quite consequent, it's no big deal if you don't do everything before the deadline. Do your best, and most importantly HAVE FUN 😃
