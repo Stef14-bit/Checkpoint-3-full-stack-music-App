@@ -20,13 +20,15 @@ adding routes
 adding controller
 add getAll controller for each route
 query getAllTracks getAllAlbums controllers
-added getById controllers
+add getById controllers
 
-# STEP 3
+# STEP 3 :
 
 posting a new track
 updating a track
 deleting a track
+
+# STEP 4 :
 
 ## Disclaimer
 
