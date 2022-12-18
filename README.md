@@ -17,6 +17,12 @@ add script npm run migrate
 # STEP 2 :
 
 adding routes
+adding controller
+add getAll controller for each route
+query getAllTracks getAllAlbums controllers
+added getById controllers
+
+# STEP 3
 
 ## Disclaimer
 
