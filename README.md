@@ -1,4 +1,4 @@
-# NODE MUSICS - CHECKPOINT 3
+# NODE MUSIC - CHECKPOINT 3
 
 # STEP 0 :
 
@@ -32,8 +32,8 @@ deleting a track
 
 getting all tracks by selected album
 posting a new album
-updating a album
-deleting a album
+updating an album
+deleting an album
 setting the response status
 running tests
 
