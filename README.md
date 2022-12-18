@@ -24,6 +24,10 @@ added getById controllers
 
 # STEP 3
 
+posting a new track
+updating a track
+deleting a track
+
 ## Disclaimer
 
 The checkpoint is quite consequent, it's no big deal if you don't do everything before the deadline. Do your best, and most importantly HAVE FUN 😃
