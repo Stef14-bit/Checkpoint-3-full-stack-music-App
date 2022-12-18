@@ -1,6 +1,11 @@
 const express = require('express');
 const { trackRoute, albumRoute } = require('./routes');
+const connection = require('../db');
 
+connection
+  .promise()
+  .query('use wild_music;')
+  .catch((e) => console.error(e));
 const app = express();
 app.use(express.json());
 
