@@ -1,6 +1,9 @@
 # NODE MUSICS - CHECKPOINT 3
 # STEP 0 : 
 clone the Rep
+
+# STEP 1 : 
+
 ## Disclaimer
 
 The checkpoint is quite consequent, it's no big deal if you don't do everything before the deadline. Do your best, and most importantly HAVE FUN 😃
