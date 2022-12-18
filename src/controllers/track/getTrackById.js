@@ -1,10 +1,10 @@
 const connection = require('../../../db.js');
 
 module.exports = async (req, res, next) => {
-  if (req.params.id) next();
+  const { id } = req.params;
   connection
     .promise()
-    .query('SELECT * FROM track')
+    .query('SELECT * FROM track WHERE id = ?', [id])
     .then(([result]) => {
       res.send(result);
     })
