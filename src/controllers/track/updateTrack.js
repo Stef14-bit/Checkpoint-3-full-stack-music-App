@@ -1,9 +1,11 @@
 const connection = require('../../../db.js');
 
-module.exports = async (req, res, next) => {
+module.exports = async (req, res) => {
+  const { title } = req.body;
+  const { id } = req.params;
   connection
     .promise()
-    .query('UPDATE track SET ? WHERE id = ?', [req.body, req.params.id])
+    .query('UPDATE track SET title = ? WHERE id = ?', [title, id])
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);

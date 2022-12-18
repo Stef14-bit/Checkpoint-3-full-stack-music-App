@@ -6,7 +6,7 @@ module.exports = async (req, res, next) => {
     .promise()
     .query('SELECT * FROM album')
     .then(([result]) => {
-      res.send(result);
+      res.status(200).send(result);
     })
     .catch((e) => console.error(e));
 };

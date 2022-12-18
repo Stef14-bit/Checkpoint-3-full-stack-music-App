@@ -6,7 +6,10 @@ module.exports = async (req, res, next) => {
     .promise()
     .query('SELECT * FROM track WHERE id = ?', [id])
     .then(([result]) => {
-      res.send(result);
+      if (result.length) {
+        return res.json(...result);
+      }
+      return res.sendStatus(404);
     })
     .catch((e) => console.error(e));
 };

@@ -34,6 +34,8 @@ getting all tracks by selected album
 posting a new album
 updating a album
 deleting a album
+setting the response status
+running tests
 
 ## Disclaimer
 

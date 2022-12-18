@@ -6,7 +6,10 @@ module.exports = async (req, res, next) => {
     .promise()
     .query('SELECT * FROM album WHERE id = ?', [id])
     .then(([result]) => {
-      res.send(result);
+      if (!result.length) {
+        res.status(404);
+      }
+      res.send(...result);
     })
     .catch((e) => console.error(e));
 };
