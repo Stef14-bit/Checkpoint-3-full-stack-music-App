@@ -11,6 +11,7 @@ const migrate = async () => {
 
 try {
   migrate();
+  console.log('successfully migrated');
 } catch (err) {
   console.error(err);
 }

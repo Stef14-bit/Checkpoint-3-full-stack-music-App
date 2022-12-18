@@ -1,8 +1,18 @@
 # NODE MUSICS - CHECKPOINT 3
-# STEP 0 : 
+
+# STEP 0 :
+
 clone the Rep
 
-# STEP 1 : 
+# STEP 1 :
+
+create database model
+add the sql script
+add .env
+create sql connection
+install packages
+create migrate file
+add script npm run migrate
 
 ## Disclaimer
 
@@ -122,6 +132,7 @@ Here are some user stories about what you need to do:
 _Remember: for the tests to work properly, you need an `album` with id `1` and a track with id `1` in your DB !_
 
 ---
+
 ## It's done ! Congrats !
 
 You can now chill :beers:
