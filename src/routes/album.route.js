@@ -1,7 +1,7 @@
+const { getAllAlbums } = require('../controllers/album');
+
 const router = require('express').Router();
 
-router.get('/', (req, res) => {
-  res.send('Hello Album');
-});
+router.get('/', getAllAlbums);
 
 module.exports = router;

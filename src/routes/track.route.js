@@ -1,7 +1,7 @@
+const { getAllTracks } = require('../controllers/track');
+
 const router = require('express').Router();
 
-router.get('/', (req, res) => {
-  res.send('Hello There');
-});
+router.get('/', getAllTracks);
 
 module.exports = router;
