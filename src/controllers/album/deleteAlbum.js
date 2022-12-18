@@ -3,7 +3,7 @@ const connection = require('../../../db.js');
 module.exports = async (req, res, next) => {
   connection
     .promise()
-    .query('DELETE FROM track WHERE id = ?', [req.params.id])
+    .query('DELETE FROM album WHERE id = ?', [req.params.id])
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);

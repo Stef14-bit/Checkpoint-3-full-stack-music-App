@@ -30,6 +30,11 @@ deleting a track
 
 # STEP 4 :
 
+getting all tracks by selected album
+posting a new album
+updating a album
+deleting a album
+
 ## Disclaimer
 
 The checkpoint is quite consequent, it's no big deal if you don't do everything before the deadline. Do your best, and most importantly HAVE FUN 😃

@@ -10,8 +10,8 @@ connection
 const app = express();
 app.use(express.json());
 
-app.use('/track', trackRoute);
-app.use('/album', albumRoute);
+app.use('/api/tracks', trackRoute);
+app.use('/api/albums', albumRoute);
 
 // Please keep this module.exports app, we need it for the tests !
 module.exports = app;
