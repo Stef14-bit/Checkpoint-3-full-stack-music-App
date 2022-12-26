@@ -6,8 +6,8 @@ const { HOST, PORT, USER, PASSWORD, DATABASE } = process.env;
 const connection = mysql.createConnection({
   host: HOST,
   port: PORT,
-  user: 'root',
-  password: 'RootPass',
+  user: USER,
+  password: PASSWORD,
   database: DATABASE,
   multipleStatements: true,
 });
