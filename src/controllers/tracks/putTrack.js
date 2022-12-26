@@ -5,7 +5,7 @@ module.exports = (req, res) => {
     .promise()
     .query('UPDATE track SET ? WHERE id_track = ?', [req.body, req.params.id])
     .then(([result]) => {
-      res.sendStatus(200);
+      res.status(204).send('no content');
     })
     .catch((err) => {
       console.error(err);

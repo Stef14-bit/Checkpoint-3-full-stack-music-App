@@ -1,2 +1,3 @@
 const tracksRoute = require('./tracks.route');
-module.exports = { tracksRoute };
+const albumsRoute = require('./albums.route');
+module.exports = { tracksRoute, albumsRoute };

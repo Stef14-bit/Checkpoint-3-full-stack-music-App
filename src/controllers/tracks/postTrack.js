@@ -11,7 +11,7 @@ module.exports = (req, res) => {
     ])
     .then(([result]) => {
       const createTrack = { id: result.insertId, title, youtube_url, id_album };
-      res.status(200).json(createTrack);
+      res.status(201).send('created').json(createTrack);
     })
     .catch((err) => {
       console.err(err);
