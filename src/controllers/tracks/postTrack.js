@@ -14,7 +14,7 @@ module.exports = (req, res) => {
       res.status(201).send('created').json(createTrack);
     })
     .catch((err) => {
-      console.err(err);
+      console.error(err);
       res.status(500);
     });
 };
