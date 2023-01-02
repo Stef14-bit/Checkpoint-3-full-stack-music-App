@@ -8,7 +8,7 @@ module.exports = (req, res) => {
       if (!result.length) {
         res.status(404).send('No album found');
       } else {
-        res.json(result);
+        res.json(result[0]);
       }
     });
 };
